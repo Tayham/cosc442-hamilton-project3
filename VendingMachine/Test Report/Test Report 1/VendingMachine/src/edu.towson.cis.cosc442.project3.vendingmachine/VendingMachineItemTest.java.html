@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../../../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../../../jacoco-resources/report.gif" type="image/gif"/><title>VendingMachineItemTest.java</title><link rel="stylesheet" href="../../../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../../../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../../../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../../../index.html" class="el_report">edu.towson.cis.cosc442.project3.vendingmachine (Mar 1, 2018 10:15:44 PM)</a> &gt; <a href="../../index.html" class="el_group">VendingMachine</a> &gt; <a href="../index.html" class="el_bundle">src</a> &gt; <a href="index.source.html" class="el_package">edu.towson.cis.cosc442.project3.vendingmachine</a> &gt; <span class="el_source">VendingMachineItemTest.java</span></div><h1>VendingMachineItemTest.java</h1><pre class="source lang-java linenums">/**
+ * 
+ */
+package edu.towson.cis.cosc442.project3.vendingmachine;
+
+import static org.junit.Assert.*;
+
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
+
+/**
+ * @author Taylor
+ *
+ */
+<span class="fc" id="L16">public class VendingMachineItemTest {</span>
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	private VendingMachineItem item;
+<span class="fc" id="L22">	final String NAME = &quot;Test&quot;;</span>
+<span class="fc" id="L23">	final double PRICE = 5.56;</span>
+	
+	@Before
+	public void setUp() throws Exception {
+<span class="fc" id="L27">		item = new VendingMachineItem(NAME, PRICE);</span>
+<span class="fc" id="L28">	}</span>
+
+	/**
+	 * @throws java.lang.Exception
+	 */
+	@After
+	public void tearDown() throws Exception {
+<span class="fc" id="L35">		item = null;</span>
+<span class="fc" id="L36">	}</span>
+
+	/**
+	 * Test method for VendingMachineItem Constructor.
+	 */
+	@Test
+	public void testVendingMachineItem() {
+<span class="fc" id="L43">		item = new VendingMachineItem(NAME, PRICE);</span>
+<span class="fc" id="L44">	}</span>
+	
+	/**
+	 * Test method for VendingMachineItem Constructor (with negative price input).
+	 */
+	@Test(expected = VendingMachineException.class)
+	public void testVendingMachineItemNegitivePrice() {
+<span class="nc" id="L51">		item = new VendingMachineItem(&quot;Negative Price Test&quot;, -4.54);</span>
+<span class="nc" id="L52">	}</span>
+
+	/**
+	 * Test method for VendingMachineItem.getName().
+	 */
+	@Test
+	public void testGetName() {
+<span class="fc" id="L59">		assertEquals(NAME, item.getName());</span>
+<span class="fc" id="L60">	}</span>
+
+	/**
+	 * Test method for VendingMachineItem.getPrice().
+	 */
+	@Test
+	public void testGetPrice() {
+<span class="fc" id="L67">		assertEquals(PRICE, item.getPrice(), .001);</span>
+<span class="fc" id="L68">	}</span>
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.7.9.201702052155</span>edu.towson.cis.cosc442.project3.vendingmachine (Mar 1, 2018 10:15:44 PM)</div></body></html>
